@@ -2,6 +2,7 @@ package com.chusdevil.listanuevapantalla
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity(), ListaAdapter.ClickListener {
 
     }
 
+
     override fun onClick(elementoTexto: String, posicion: Int) {
 
         val intent = Intent(this, PantallaNueva::class.java)
@@ -27,6 +29,10 @@ class MainActivity : AppCompatActivity(), ListaAdapter.ClickListener {
         intent.putExtra("posicion", posicion.toString())
         startActivity(intent)
 
+    }
+
+    override fun lol(posicion: Int) {
+        Toast.makeText(this,"Nueva ventana",Toast.LENGTH_SHORT).show()
     }
 }
 

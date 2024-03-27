@@ -11,6 +11,7 @@ class ListaAdapter(val click: ClickListener) :
 
     interface ClickListener {
         fun onClick(elemento: String, posicion: Int)
+        fun lol (posicion: Int)
     }
 
 
@@ -32,7 +33,9 @@ class ListaAdapter(val click: ClickListener) :
 
         holder.itemView.setOnClickListener {
             click.onClick(elemento, posicion)
+            click.lol(posicion)
         }
+
 
     }
 
